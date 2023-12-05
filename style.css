@@ -8,7 +8,7 @@
     --accent-color: #3f3f3f;
     --text-color: #ffffff;
     --secondary-text-color: #bfbfbf;
-    --border-radius: 0.5rem;
+    --border-radius: 0.375rem;
 }
 
 body {
@@ -103,7 +103,7 @@ li {
 .valdropbtn {
     padding: 0.5rem;
     border: 0.125rem solid var(--accent-color);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     min-width: 260px;
     background-color: var(--secondary-bg-color);
     color: var(--secondary-text-color);
@@ -123,7 +123,7 @@ li {
 .timedropbtn {
     padding: 0.5rem;
     border: 0.125rem solid var(--accent-color);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     min-width: 260px;
     background-color: var(--secondary-bg-color);
     color: var(--secondary-text-color);
