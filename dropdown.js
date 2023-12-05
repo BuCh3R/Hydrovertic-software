@@ -8,20 +8,18 @@ function toggleValues() {
         let dropdowns = document.getElementsByClassName("dropdown-content");
         let dropdownbtn = document.getElementsByClassName("dropbtn");
 
-        let i;
-        for (i = 0; i < dropdowns.length; i++) {
+        for (let i = 0; i < dropdowns.length; i++) {
             let openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
         }
-        
-        let b;
-        for (b = 0; b < dropdownbtn.length; b++){
-            let opendropdownbtn = dropdownbtn[b];
+
+        for (let i = 0; i < dropdownbtn.length; i++){
+            let opendropdownbtn = dropdownbtn[i];
             if(opendropdownbtn.classList.contains('bottom-borders')){
-            opendropdownbtn.classList.remove('bottom-borders');
-        }
+                opendropdownbtn.classList.remove('bottom-borders');
+            }
         }
     }
 }
