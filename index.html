@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydrovertic</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="dropdown.js" defer></script>
+    <script src="chart.js" defer></script>
 </head>
 <body>
     <header>
@@ -45,7 +47,7 @@
             </div>
         </section>
         <section class="container" id="input-container">
-            <div class="input-container">
+            <div class="input-box">
                 <h3>Input</h3>
                 <div class="dropdown">
                     <button id="valueDropdown" onclick="toggleValues()" class="valdropbtn">Dropdown<img class="arrow-down" src="chevron-down.svg"></button>
@@ -56,8 +58,7 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="input-container">
+            <div class="input-box">
                 <h3>Input</h3>
                 <div class="dropdown">
                     <button id="timeDropdown" onclick="toggleTime()" class="timedropbtn">Dropdown<img class="arrow-down-time" src="chevron-down.svg"></button>
@@ -72,6 +73,11 @@
         <section class="container" id="chart-container">
             <div>
                 <h3>Text</h3>
+                <div class="chart-box">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+            <div class="container">
                 <input type="range" class="slider">
             </div>
             <div class="container" id="chart-button-container">
