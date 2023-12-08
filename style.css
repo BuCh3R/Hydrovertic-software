@@ -211,6 +211,16 @@ li {
     accent-color: var(--primary-color);
 }
 
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.range-values span {
+    color: var(--secondary-text-color);
+    font-size: 0.75rem;
+}
+
 #chart-button-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

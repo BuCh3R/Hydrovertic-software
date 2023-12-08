@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="dropdown.js" defer></script>
+    <script src="slider.js" defer></script>
     <script src="data.js" defer></script>
     <script src="chart.js" defer></script>
 </head>
@@ -79,7 +80,12 @@
                 </div>
             </div>
             <div class="container">
-                <input type="range" class="slider">
+                <input type="range" class="slider" id="chart-range">
+                <div class="range-values">
+                    <span id="min-interval"></span>
+                    <span id="max-interval"></span>
+                </div>
+                <p>Value: <span id="current-interval"></span></p>
             </div>
             <div class="container" id="chart-button-container">
                 <button class="button" id="bar-chart-button">Text</button>
