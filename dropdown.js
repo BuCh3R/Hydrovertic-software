@@ -1,15 +1,91 @@
+// elements of value dropdown options
+let valbtn = document.getElementById("valueDropdown");
+let Alle = document.getElementById("Alle");
+let Temperatur = document.getElementById("Temperatur");
+let Luftfugtighed = document.getElementById("Luftfugtighed");
+let Kuldioxid = document.getElementById("Kuldioxid");
+let Vandsledningsevne = document.getElementById("Vandsledningsevne");
+let VandspH = document.getElementById("VandspH");
+
+// elements of time dropdown options
+let timeBtn = document.getElementById("timeDropdown");
+let timeDag = document.getElementById("timeDag");
+let timeUge = document.getElementById("timeUge");
+let timeMåned = document.getElementById("timeMåned");
+let timeKvartal = document.getElementById("timeKvartal");
+let timeÅr = document.getElementById("timeÅr");
+let timeBrugerdefineret = document.getElementById("timeBrugerdefineret");
+
+// recreate svg imgs
+let arrowDown = document.createElement("img");
+arrowDown.src = "chevron-down.svg";
+arrowDown.setAttribute("class", "arrow-down");
+let arrowDown2 = document.createElement("img");
+arrowDown2.src = "chevron-down.svg";
+arrowDown2.setAttribute("class", "arrow-down");
+
 function toggleValues() {
     document.getElementById("valueDropdownOptions").classList.toggle("show");
-    document.getElementById("valueDropdown").classList.toggle("bottom-borders");
+    valbtn.classList.toggle("bottom-borders");
 }
 
 function toggleTime() {
     document.getElementById("timeDropdownOptions").classList.toggle("show");
-    document.getElementById("timeDropdown").classList.toggle("bottom-borders");
+    timeBtn.classList.toggle("bottom-borders");
 }
 
-// Close dropdown if user click anywhere else
+//checks what option was selected in the value dropdown
+function valCheckSelected(event){
+    let newContext = document.getElementById("valueDropdown");
+    if(event.target.matches('#Alle')){
+        newContext.textContent = Alle.textContent;
+        newContext.appendChild(arrowDown);
+    }else if(event.target.matches('#Temperatur')){
+        newContext.textContent = Temperatur.textContent;
+        newContext.appendChild(arrowDown);
+    }else if(event.target.matches('#Luftfugtighed')){
+        newContext.textContent = Luftfugtighed.textContent;
+        newContext.appendChild(arrowDown);
+    }else if(event.target.matches('#Kuldioxid')){
+        newContext.textContent = Kuldioxid.textContent;
+        newContext.appendChild(arrowDown);
+    }else if(event.target.matches('#Vandsledningsevne')){
+        newContext.textContent = Vandsledningsevne.textContent;
+        newContext.appendChild(arrowDown);
+    }else if(event.target.matches('#VandspH')){
+        newContext.textContent = VandspH.textContent;
+        newContext.appendChild(arrowDown);
+    }
+}
+
+//checks what option was selected in the timeframe dropdown
+function timeCheckSelected(event){
+    let newContext = document.getElementById("timeDropdown");
+    if(event.target.matches('#timeDag')){
+        newContext.textContent = timeDag.textContent;
+        newContext.appendChild(arrowDown2);
+    }else if(event.target.matches('#timeUge')){
+        newContext.textContent = timeUge.textContent;
+        newContext.appendChild(arrowDown2);
+    }else if(event.target.matches('#timeMåned')){
+        newContext.textContent = timeMåned.textContent;
+        newContext.appendChild(arrowDown2);
+    }else if(event.target.matches('#timeKvartal')){
+        newContext.textContent = timeKvartal.textContent;
+        newContext.appendChild(arrowDown2);
+    }else if(event.target.matches('#timeÅr')){
+        newContext.textContent = timeÅr.textContent;
+        newContext.appendChild(arrowDown2);
+    }else if(event.target.matches('#timeBrugerdefineret')){
+        newContext.textContent = timeBrugerdefineret.textContent;
+        newContext.appendChild(arrowDown2);
+    }
+}
+
 window.onclick = function(event) {
+    valCheckSelected(event);
+    timeCheckSelected(event);
+
     // closes value dropdown content
     if (!event.target.matches('.valdropbtn') && !event.target.matches('.arrow-down')) {
         let dropdowns = document.getElementsByClassName("val-dropdown-content");
@@ -29,6 +105,7 @@ window.onclick = function(event) {
             }
         }
     }
+    
     // closes time dropdown content
     if (!event.target.matches('.timedropbtn') && !event.target.matches('.arrow-down-time')) {
         let dropdowns = document.getElementsByClassName("time-dropdown-content");
