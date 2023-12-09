@@ -234,3 +234,9 @@ li {
     border-radius: var(--border-radius);
     background-color: var(--accent-color);
 }
+.input-start-date, .input-end-date{
+    display: inline;
+}
+.input-start-date input, .input-end-date input{
+    max-width: 30%;
+}

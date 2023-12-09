@@ -52,26 +52,50 @@
             <div class="input-box">
                 <h3>Input</h3>
                 <div class="dropdown">
-                    <button id="valueDropdown" onclick="toggleValues()" class="valdropbtn">Dropdown<img class="arrow-down" src="chevron-down.svg"></button>
+                    <button id="valueDropdown" onclick="toggleValues()" class="valdropbtn">Temperatur<img class="arrow-down" src="chevron-down.svg"></button>
                     <div id="valueDropdownOptions" class="val-dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                      <a id="Alle" href="#">Alle</a>
+                      <a id="Temperatur" href="#">Temperatur</a>
+                      <a id="Luftfugtighed" href="#">Luftfugtighed</a>
+                      <a id="Kuldioxid" href="#">Kuldioxid</a>
+                      <a id="Vandsledningsevne" href="#">Vands ledningsevne</a>
+                      <a id="VandspH" href="#">Vands pH</a>
                     </div>
                 </div>
             </div>
             <div class="input-box">
                 <h3>Input</h3>
                 <div class="dropdown">
-                    <button id="timeDropdown" onclick="toggleTime()" class="timedropbtn">Dropdown<img class="arrow-down-time" src="chevron-down.svg"></button>
+                    <button id="timeDropdown" onclick="toggleTime()" class="timedropbtn">1 Dag<img class="arrow-down-time" src="chevron-down.svg"></button>
                     <div id="timeDropdownOptions" class="time-dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                      <a id="timeDag" href="#">1 Dag</a>
+                      <a id="timeUge" href="#">1 Uge</a>
+                      <a id="timeMåned" href="#">1 Måned</a>
+                      <a id="timeKvartal" href="#">1 Kvartal</a>
+                      <a id="timeÅr" href="#">1 År</a>
+                      <a id="timeBrugerdefineret" href="#">Brugerdefineret</a>
                     </div>
                 </div>
             </div>
         </section>
+        <form id="chose-date" action="">
+            <div>
+                <p>start dato</p>
+                <div class="input-start-date">
+                    <input id="startDay" type="text" placeholder="31">
+                    <input id="startMonth" type="text" placeholder="12">
+                    <input id="startYear" type="text" placeholder="2023">
+                </div>
+            </div>
+            <div>
+                <p>slut dato</p>
+                <div class="input-end-date">
+                    <input id="endDay" type="text" placeholder="31">
+                    <input id="endMonth" type="text" placeholder="12">
+                    <input id="endYear" type="text" placeholder="2023">
+                </div>
+            </div>
+        </form>
         <section class="container" id="chart-container">
             <div>
                 <h3>Text</h3>
