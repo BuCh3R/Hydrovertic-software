@@ -14,4 +14,6 @@ currentInterval.innerHTML = slider.value * 15;
 
 slider.oninput = function() {
     currentInterval.innerHTML = this.value * 15;
+    customTimeFrame();
+    createChart();
 }
