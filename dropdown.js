@@ -24,6 +24,8 @@ let arrowDown2 = document.createElement("img");
 arrowDown2.src = "chevron-down.svg";
 arrowDown2.setAttribute("class", "arrow-down");
 
+
+
 function toggleValues() {
     document.getElementById("valueDropdownOptions").classList.toggle("show");
     valbtn.classList.toggle("bottom-borders");
@@ -81,6 +83,40 @@ function timeCheckSelected(event){
         newContext.appendChild(arrowDown2);
     }
 }
+
+let startDateObj = {
+    day: 1,
+    month: 1,
+    year: 1
+}
+
+let endDateObj = {
+    day: 1,
+    month: 1,
+    year: 1
+}
+
+let startDay = document.getElementById("startDay");
+let startMonth = document.getElementById("startMonth");
+let startYear = document.getElementById("startYear");
+
+let endDay = document.getElementById("endDay");
+let endMonth = document.getElementById("endMonth");
+let endYear = document.getElementById("endYear");
+
+let theForm = document.getElementById("chose-date");
+theForm.addEventListener('input', function () {
+    startDateObj.day = startDay.value;
+    startDateObj.month = startMonth.value;
+    startDateObj.year = startYear.value;
+
+    endDateObj.day = endDay.value;
+    endDateObj.month = endMonth.value;
+    endDateObj.year = endYear.value;
+    
+    console.log(startDateObj);
+    console.log(endDateObj);
+});
 
 window.onclick = function(event) {
     valCheckSelected(event);
