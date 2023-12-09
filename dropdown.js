@@ -113,9 +113,8 @@ theForm.addEventListener('input', function () {
     endDateObj.day = endDay.value;
     endDateObj.month = endMonth.value;
     endDateObj.year = endYear.value;
-    
-    console.log(startDateObj);
-    console.log(endDateObj);
+    customTimeFrame();
+    createChart();
 });
 
 window.onclick = function(event) {

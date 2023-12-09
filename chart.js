@@ -16,14 +16,6 @@ function dataTimeFrame(time) {
 
 // dataTimeFrame(timeFrame);
 
-let startDay = 27;
-let startMonth = 1;
-let startYear = 2023;
-
-let endDay = 28;
-let endMonth = 1;
-let endYear = 2023;
-
 function afterDate(date, day, month, year) {
     if (date.year > year) {
         return true;
@@ -59,7 +51,7 @@ function beforeDate(date, day, month, year) {
 function customTimeFrame() {
     xValues.length = 0;
     for (let i = 0; i < dataSet.length; i++) {
-        if (afterDate(dataSet[i], startDay, startMonth, startYear) && beforeDate(dataSet[i], endDay, endMonth, endYear)) {
+        if (afterDate(dataSet[i], startDateObj.day, startDateObj.month, startDateObj.year) && beforeDate(dataSet[i], endDateObj.day, endDateObj.month, endDateObj.year)) {
             xValues.push(dataSet[i].hour + ":" + dataSet[i].minute);
             yValues.push(dataSet[i].value);
         }
