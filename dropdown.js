@@ -96,7 +96,7 @@ function timeCheckSelected(event){
         newContext.textContent = timeBrugerdefineret.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:block";
-        selectedTimeFrame(time);
+        // selectedTimeFrame(time);
         customTime = true;
     }
 }
