@@ -120,6 +120,7 @@ theForm.addEventListener('input', function () {
     endDateObj.month = endMonth.value;
     endDateObj.year = endYear.value;
     customTimeFrame();
+    chartIntervals();
     createChart();
 });
 
