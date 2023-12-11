@@ -1,47 +1,29 @@
 let xValues = new Array;
 let yValues = new Array;
 
-let timeFrame = 20;
+let timeFrame = new Array;
 
-function dataTimeFrame(time) {
-    xValues.length = 0;
+let time;
+
+function selectedTimeFrame() {
+    timeFrame.length = 0;
     for (let i = 0; i < dataSet.length; i++) {
         if (i < time) {
-            xValues.push(dataSet[i].hour + ":" + dataSet[i].minute);
-            yValues.push(dataSet[i].value);
-        }
-        i += parseInt(slider.value) - 1;
-    }
-}
-
-// dataTimeFrame(timeFrame);
-
-function afterDate(date, day, month, year) {
-    if (date.year > year) {
-        return true;
-    }
-    else if (date.year == year) {
-        if (date.month > month) {
-            return true;
-        }
-        else if (date.month == month) {
-            if (date.day >= day) {
-                return true;
-            }
+            timeFrame.push(dataSet[i]);
         }
     }
 }
 
-function beforeDate(date, day, month, year) {
-    if (date.year < year) {
+function withinTimeFrame(date) {
+    if (date.year > startDateObj.year && date.year < endDateObj.year) {
         return true;
     }
-    else if (date.year == year) {
-        if (date.month < month) {
+    else if (date.year == (startDateObj.year || endDateObj.year)) {
+        if (date.month > startDateObj.month && date.month < endDateObj.month) {
             return true;
         }
-        else if (date.month == month) {
-            if (date.day <= day) {
+        else if (date.month == (startDateObj.month || endDateObj.month)) {
+            if (date.day >= startDateObj.day && date.day <= endDateObj.day) {
                 return true;
             }
         }
@@ -49,26 +31,62 @@ function beforeDate(date, day, month, year) {
 }
 
 function customTimeFrame() {
-    xValues.length = 0;
+    timeFrame.length = 0;
     for (let i = 0; i < dataSet.length; i++) {
-        if (afterDate(dataSet[i], startDateObj.day, startDateObj.month, startDateObj.year) && beforeDate(dataSet[i], endDateObj.day, endDateObj.month, endDateObj.year)) {
-            xValues.push(dataSet[i].hour + ":" + dataSet[i].minute);
-            yValues.push(dataSet[i].value);
+        if (withinTimeFrame(dataSet[i])) {
+            timeFrame.push(dataSet[i]);
         }
-        i += parseInt(slider.value) - 1;
     }
 }
 
 customTimeFrame();
 
+let interval = 1;
+
+function displayInterval(value, element) {
+    if (value >= 96) {
+        element.innerHTML = Math.floor(value / 96) + " dag(e)";
+    }
+    else if (value >= 4) {
+        element.innerHTML = Math.floor(value / 4) + " time(r)";
+    }
+    else {
+        element.innerHTML = value * 15 + " minutter";
+    }
+}
+
+function chartIntervals() {
+    interval = 1;
+    while (timeFrame.length / interval > 50) {
+        interval++;
+    }
+    slider.min = interval;
+    slider.max = interval * 4;
+    slider.value = Math.round((parseInt(slider.min) + parseInt(slider.max)) / 2);
+    displayInterval(slider.min, minInterval);
+    displayInterval(slider.max, maxInterval);
+}
+
+chartIntervals();
+
 let primaryColor = "#008559";
 
 function createChart() {
-
-    if(chartInstance != undefined){
-        chartInstance.destroy();
+    xValues.length = 0;
+    yValues.length = 0;
+    for (let i = 0; i < timeFrame.length; i += parseInt(slider.value)) {
+        if (slider.value >= 96) {
+            xValues.push(timeFrame[i].day + " / " + timeFrame[i].month);
+        }
+        else if (slider.value >= 4) {
+            xValues.push(timeFrame[i].hour + ":00");
+        }
+        else {
+            xValues.push(timeFrame[i].hour + ":" + timeFrame[i].minute);
+        }
+        yValues.push(timeFrame[i].value)
     }
-    var chartInstance = new Chart("chart", {
+    new Chart("chart", {
         type: "line",
         data: {
             labels: xValues,
@@ -83,6 +101,14 @@ function createChart() {
         options: {
             legend: {
                 display: false
+            },
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            max: 50
+                        }
+                    }]
             }
         }
     });

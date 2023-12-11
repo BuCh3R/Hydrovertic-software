@@ -19,7 +19,7 @@ function createData() {
     m = 0;
     y = 2023;
     for (let i = 0; i < 35040; i++) {
-        addData(min, h, d, m + 1, y, Math.floor(Math.random() * 10));
+        addData(min, h, d, m + 1, y, Math.floor(Math.random() * 10) + 20);
         min += 15;
         if (min >= 60) {
             min = 0;
