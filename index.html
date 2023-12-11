@@ -6,6 +6,7 @@
     <title>Hydrovertic</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="theme.js" defer></script>
     <script src="dropdown.js" defer></script>
     <script src="slider.js" defer></script>
     <script src="Graf.js" defer></script>
@@ -70,32 +71,32 @@
         <section class="container" id="value-container">
             <div class="value-row-1">
                 <div class="value-box">
-                    <p>Value</p>
-                    <strong>00.00</strong>
+                    <p>Temp.</p>
+                    <strong>23.1C°</strong>
                 </div>
                 <div class="value-box">
-                    <p>Value</p>
-                    <strong>00.00</strong>
+                    <p>Fugt</p>
+                    <strong>17.7%</strong>
                 </div>
                 <div class="value-box">
-                    <p>Value</p>
-                    <strong>00.00</strong>
+                    <p>CO2</p>
+                    <strong>426.2</strong>
                 </div>
             </div>
             <div class="value-row-2">
                 <div class="value-box">
-                    <p>Value</p>
-                    <strong>00.00</strong>
+                    <p>Vands ledningsevne</p>
+                    <strong>4,534</strong>
                 </div>
                 <div class="value-box">
-                    <p>Value</p>
-                    <strong>00.00</strong>
+                    <p>Vands pH</p>
+                    <strong>8.2</strong>
                 </div>
             </div>
         </section>
         <section class="container" id="input-container">
             <div class="input-box">
-                <h3>Input</h3>
+                <h3>Værdier</h3>
                 <div class="dropdown">
                     <button id="valueDropdown" onclick="toggleValues()" class="valdropbtn">Temperatur<img class="arrow-down" src="chevron-down.svg"></button>
                     <div id="valueDropdownOptions" class="val-dropdown-content">
@@ -109,7 +110,7 @@
                 </div>
             </div>
             <div class="input-box">
-                <h3>Input</h3>
+                <h3>Tidsramme</h3>
                 <div class="dropdown">
                     <button id="timeDropdown" onclick="toggleTime()" class="timedropbtn">1 Dag<img class="arrow-down-time" src="chevron-down.svg"></button>
                     <div id="timeDropdownOptions" class="time-dropdown-content">
@@ -145,7 +146,9 @@
             <div>
                 <h3>Text</h3>
                 <div class="chart-box">
-                    <canvas id="chart"></canvas>
+                    <div id="idk">
+                        <canvas id="chart"></canvas>
+                    </div>
                     <div class="chart-overlay"></div>
                 </div>
             </div>
@@ -155,11 +158,10 @@
                     <span id="min-interval"></span>
                     <span id="max-interval"></span>
                 </div>
-                <p>Value: <span id="current-interval"></span></p>
             </div>
             <div class="container" id="chart-button-container">
                 <button class="button" id="bar-chart-button">Text</button>
-                <button class="button" id="line-chart-button">Text</button>
+                <button class="active button" id="line-chart-button">Text</button>
                 <button class="button" id="area-chart-button">Text</button>
             </div>
         </section>

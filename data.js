@@ -13,6 +13,7 @@ let y = 2023;
 let months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 function createData() {
+    dataSet.length = 0;
     min = 0;
     h = 0;
     d = 1;

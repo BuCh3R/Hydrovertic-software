@@ -203,6 +203,10 @@ li {
     background-color: var(--secondary-bg-color);
 }
 
+#idk {
+    display: block;
+}
+
 .chart-overlay {
     position: absolute;
     background-color: "red";
@@ -241,6 +245,7 @@ li {
     width: 100%;
     border-radius: var(--border-radius);
     background-color: var(--accent-color);
+    font-size: 1rem;
 }
 
 /* CSS til overlay menu, til mobile devices*/
@@ -331,4 +336,9 @@ hr {
 }
 .show {
     display:block !important;
+}
+
+.active {
+    background-color: var(--primary-color);
+    color: var(--main-bg-color);
 }

@@ -3,9 +3,9 @@ let yValues = new Array;
 
 let timeFrame = new Array;
 
-function selectedTimeFrame(time) {
+function selectedTimeFrame() {
     timeFrame.length = 0;
-    for (let i = dataSet.length - 1; i > 0; i--) {
+    for (let i = 0; i < dataSet.length; i++) {
         if (i < time) {
             timeFrame.push(dataSet[i]);
         }
@@ -68,7 +68,6 @@ function chartIntervals() {
 }
 
 chartIntervals();
-
 
 function createChart() {
     xValues.length = 0;

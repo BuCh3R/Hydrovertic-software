@@ -4,6 +4,11 @@ let minInterval = document.getElementById("min-interval");
 let maxInterval = document.getElementById("max-interval");
 
 slider.oninput = function() {
-    customTimeFrame();
+    if (customTime == true) {
+        customTimeFrame();
+    }
+    else {
+        selectedTimeFrame
+    }
     createChart();
 }

@@ -36,31 +36,80 @@ function toggleTime() {
     timeBtn.classList.toggle("bottom-borders");
 }
 
+let time = 96;
+let customTime;
+
 //checks what option was selected in the value dropdown
 function valCheckSelected(event){
     let newContext = document.getElementById("valueDropdown");
     if(event.target.matches('#Alle')){
         newContext.textContent = Alle.textContent;
         newContext.appendChild(arrowDown);
+        createData();
+        if (customTime == true) {
+            customTimeFrame();
+        }
+        else {
+            selectedTimeFrame();
+        }
+        createChart();
     }else if(event.target.matches('#Temperatur')){
         newContext.textContent = Temperatur.textContent;
         newContext.appendChild(arrowDown);
+        createData();
+        if (customTime == true) {
+            customTimeFrame();
+        }
+        else {
+            selectedTimeFrame();
+        }
+        createChart();
     }else if(event.target.matches('#Luftfugtighed')){
         newContext.textContent = Luftfugtighed.textContent;
         newContext.appendChild(arrowDown);
+        createData();
+        if (customTime == true) {
+            customTimeFrame();
+        }
+        else {
+            selectedTimeFrame();
+        }
+        createChart();
     }else if(event.target.matches('#Kuldioxid')){
         newContext.textContent = Kuldioxid.textContent;
         newContext.appendChild(arrowDown);
+        createData();
+        if (customTime == true) {
+            customTimeFrame();
+        }
+        else {
+            selectedTimeFrame();
+        }
+        createChart();
     }else if(event.target.matches('#Vandsledningsevne')){
         newContext.textContent = Vandsledningsevne.textContent;
         newContext.appendChild(arrowDown);
+        createData();
+        if (customTime == true) {
+            customTimeFrame();
+        }
+        else {
+            selectedTimeFrame();
+        }
+        createChart();
     }else if(event.target.matches('#VandspH')){
         newContext.textContent = VandspH.textContent;
         newContext.appendChild(arrowDown);
+        createData();
+        if (customTime == true) {
+            customTimeFrame();
+        }
+        else {
+            selectedTimeFrame();
+        }
+        createChart();
     }
 }
-
-let customTime;
 
 //checks what option was selected in the timeframe dropdown
 function timeCheckSelected(event){
@@ -70,34 +119,51 @@ function timeCheckSelected(event){
         newContext.textContent = timeDag.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
-        selectedTimeFrame(96);
+        time = 96;
+        selectedTimeFrame();
+        chartIntervals();
+        createChart();
     }else if(event.target.matches('#timeUge')){
         newContext.textContent = timeUge.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none"
         time = 672;
-        selectedTimeFrame(672);
+        selectedTimeFrame();
+        chartIntervals();
+        createChart();
     }else if(event.target.matches('#timeMåned')){
         newContext.textContent = timeMåned.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
-        selectedTimeFrame(2880);
+        time = 2880;
+        selectedTimeFrame();
+        chartIntervals();
+        createChart();
     }else if(event.target.matches('#timeKvartal')){
         newContext.textContent = timeKvartal.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
-        selectedTimeFrame(8640);
+        time = 8640;
+        selectedTimeFrame();
+        chartIntervals();
+        createChart();
     }else if(event.target.matches('#timeÅr')){
         newContext.textContent = timeÅr.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
-        selectedTimeFrame(35040);
+        time = 35040;
+        selectedTimeFrame();
+        chartIntervals();
+        createChart();
     }else if(event.target.matches('#timeBrugerdefineret')){
+        time = 0;
         newContext.textContent = timeBrugerdefineret.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:block";
-        selectedTimeFrame(time);
         customTime = true;
+        customTimeFrame();
+        chartIntervals();
+        createChart();
     }
 }
 
