@@ -66,21 +66,27 @@ function timeCheckSelected(event){
     if(event.target.matches('#timeDag')){
         newContext.textContent = timeDag.textContent;
         newContext.appendChild(arrowDown2);
+        document.getElementById("chose-date").style = "display:none";
     }else if(event.target.matches('#timeUge')){
         newContext.textContent = timeUge.textContent;
         newContext.appendChild(arrowDown2);
+        document.getElementById("chose-date").style = "display:none";
     }else if(event.target.matches('#timeMåned')){
         newContext.textContent = timeMåned.textContent;
         newContext.appendChild(arrowDown2);
+        document.getElementById("chose-date").style = "display:none";
     }else if(event.target.matches('#timeKvartal')){
         newContext.textContent = timeKvartal.textContent;
         newContext.appendChild(arrowDown2);
+        document.getElementById("chose-date").style = "display:none";
     }else if(event.target.matches('#timeÅr')){
         newContext.textContent = timeÅr.textContent;
         newContext.appendChild(arrowDown2);
+        document.getElementById("chose-date").style = "display:none";
     }else if(event.target.matches('#timeBrugerdefineret')){
         newContext.textContent = timeBrugerdefineret.textContent;
         newContext.appendChild(arrowDown2);
+        document.getElementById("chose-date").style = "display:block";
     }
 }
 
