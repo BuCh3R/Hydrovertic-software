@@ -12,7 +12,7 @@ minInterval.innerHTML = slider.min * 15 + " minutter";
 maxInterval.innerHTML = slider.max * 15 + " minutter";
 currentInterval.innerHTML = slider.value * 15;
 
-slider.oninput = function() {
+slider.onchange = function() {
     currentInterval.innerHTML = this.value * 15;
     customTimeFrame();
     createChart();

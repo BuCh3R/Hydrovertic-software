@@ -64,7 +64,11 @@ customTimeFrame();
 let primaryColor = "#008559";
 
 function createChart() {
-    new Chart("chart", {
+
+    if(chartInstance != undefined){
+        chartInstance.destroy();
+    }
+    var chartInstance = new Chart("chart", {
         type: "line",
         data: {
             labels: xValues,
@@ -82,6 +86,7 @@ function createChart() {
             }
         }
     });
+    chartInstance.update();
 }
 
 createChart();
