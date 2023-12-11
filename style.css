@@ -187,9 +187,7 @@ li {
 .time-dropdown-content a:hover {
     background-color: var(--main-bg-color);
 }
-.show {
-    display:block;
-}
+
 
 .bottom-borders{
     border-bottom-left-radius: 0;
@@ -302,4 +300,25 @@ hr {
     border-radius: 0.0625rem;
     height: 0;
     
+.input-start-date, .input-end-date{
+    display: inline;
+}
+.input-start-date input, .input-end-date input{
+    box-sizing: border-box;
+    max-width: 30%;
+    padding: 0.5rem;
+    border: 0.125rem solid var(--accent-color);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+}
+.input-start-date input:focus, .input-end-date input:focus{
+    outline: none;
+    border: 2px solid var(--primary-color);
+}
+#chose-date{
+    display: none;
+}
+.show {
+    display:block !important;
 }
