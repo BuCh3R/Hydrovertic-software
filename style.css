@@ -234,3 +234,72 @@ li {
     border-radius: var(--border-radius);
     background-color: var(--accent-color);
 }
+
+/* CSS til overlay menu, til mobile devices*/
+.nav-overlay {
+    position: absolute;
+    height: 100vh;
+    width: calc(100% - 4rem);
+    background-color: var(--main-bg-color);
+    z-index: 999;
+    box-sizing: border-box;
+
+}
+
+.overlay-grid {
+    padding: 2rem 1.5rem;
+    display: grid;
+    height: 100%;
+    grid-template-rows: 7rem 64vh 6rem;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}
+
+.overlay-grid > .header {
+    grid-area: header;
+}
+
+.overlay-grid > .content {
+    grid-area: content;
+}
+
+.overlay-grid > .footer {
+    grid-area: footer;
+}
+
+.grid-item {
+    
+}
+
+.menu-item strong {
+    font-size: 1.25rem;
+}
+
+.menu-item p {
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+}
+.nav-overlay .menu-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr 2rem;
+    gap: 1.5rem;
+}
+
+img[src="log-out.svg"] {
+    transform: scaleX(-1);
+}
+
+
+
+hr {
+    display: block;
+    margin: 2rem 0;
+    border: 0;
+    border-top: 0.0625rem solid var(--accent-color);
+    border-bottom: 0.0625rem solid var(--accent-color);
+    border-radius: 0.0625rem;
+    height: 0;
+    
+}
