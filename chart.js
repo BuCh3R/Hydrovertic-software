@@ -3,16 +3,16 @@ let yValues = new Array;
 
 let timeFrame = new Array;
 
-let time;
-
-function selectedTimeFrame() {
+function selectedTimeFrame(time) {
     timeFrame.length = 0;
-    for (let i = 0; i < dataSet.length; i++) {
+    for (let i = dataSet.length - 1; i > 0; i--) {
         if (i < time) {
             timeFrame.push(dataSet[i]);
         }
     }
 }
+
+selectedTimeFrame();
 
 function withinTimeFrame(date) {
     if (date.year > startDateObj.year && date.year < endDateObj.year) {
@@ -39,7 +39,7 @@ function customTimeFrame() {
     }
 }
 
-customTimeFrame();
+// customTimeFrame();
 
 let interval = 1;
 
@@ -69,7 +69,6 @@ function chartIntervals() {
 
 chartIntervals();
 
-let primaryColor = "#008559";
 
 function createChart() {
     xValues.length = 0;
@@ -87,14 +86,14 @@ function createChart() {
         yValues.push(timeFrame[i].value)
     }
     new Chart("chart", {
-        type: "line",
+        type: chartObj.type,
         data: {
             labels: xValues,
             datasets: [{
-                fill: false,
+                fill: chartObj.fill,
                 lineTension: 0,
-                backgroundColor: primaryColor,
-                borderColor: primaryColor,
+                backgroundColor: chartObj.backgroundColor,
+                borderColor: "#008559",
                 data: yValues
             }]
         },
@@ -104,15 +103,14 @@ function createChart() {
             },
             scales: {
                 yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            max: 50
-                        }
-                    }]
+                    ticks: {
+                        beginAtZero: true,
+                        max: 50
+                    }
+                }]
             }
         }
     });
-    chartInstance.update();
 }
 
 createChart();

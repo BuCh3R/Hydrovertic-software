@@ -2,6 +2,12 @@
 // Array with button IDs
 let buttonIds = ['bar-chart-button', 'line-chart-button', 'area-chart-button'];
 
+let chartObj = {
+  type: "line",
+  fill: false,
+  backgroundColor: "#008559"
+}
+
 // Add click event listener to each button
 buttonIds.forEach((id) => {
   let button = document.getElementById(id);
@@ -24,16 +30,19 @@ function handleButtonClick(clickedId) {
 
   // Show different alerts based on the clicked button
   if (clickedId === 'bar-chart-button') {
-    showAlert('Bar Chart');
+    chartObj.type = "bar";
+    chartObj.fill = true;
+    chartObj.backgroundColor = "#008559";
+    createChart();
   } else if (clickedId === 'line-chart-button') {
-    showAlert('Line Chart');
+    chartObj.type = "line";
+    chartObj.fill = false;
+    chartObj.backgroundColor = "#008559";
+    createChart();
   } else if (clickedId === 'area-chart-button') {
-    showAlert('Area Chart');
+    chartObj.type = "line";
+    chartObj.fill = true;
+    chartObj.backgroundColor = "rgba(0, 133, 89, 0.25)";
+    createChart();
   }
-}
-
-// Function to show an alert in the console
-function showAlert(chartType) {
-  console.log('Button clicked: ' + chartType);
-  // You can add additional logic here if needed
 }

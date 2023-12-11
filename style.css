@@ -309,7 +309,7 @@ hr {
     border-bottom: 0.0625rem solid var(--accent-color);
     border-radius: 0.0625rem;
     height: 0;
-    
+}
 .input-start-date, .input-end-date{
     display: inline;
 }

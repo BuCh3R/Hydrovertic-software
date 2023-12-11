@@ -60,33 +60,44 @@ function valCheckSelected(event){
     }
 }
 
+let customTime;
+
 //checks what option was selected in the timeframe dropdown
 function timeCheckSelected(event){
+    customTime = false;
     let newContext = document.getElementById("timeDropdown");
     if(event.target.matches('#timeDag')){
         newContext.textContent = timeDag.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
+        selectedTimeFrame(96);
     }else if(event.target.matches('#timeUge')){
         newContext.textContent = timeUge.textContent;
         newContext.appendChild(arrowDown2);
-        document.getElementById("chose-date").style = "display:none";
+        document.getElementById("chose-date").style = "display:none"
+        time = 672;
+        selectedTimeFrame(672);
     }else if(event.target.matches('#timeMåned')){
         newContext.textContent = timeMåned.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
+        selectedTimeFrame(2880);
     }else if(event.target.matches('#timeKvartal')){
         newContext.textContent = timeKvartal.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
+        selectedTimeFrame(8640);
     }else if(event.target.matches('#timeÅr')){
         newContext.textContent = timeÅr.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:none";
+        selectedTimeFrame(35040);
     }else if(event.target.matches('#timeBrugerdefineret')){
         newContext.textContent = timeBrugerdefineret.textContent;
         newContext.appendChild(arrowDown2);
         document.getElementById("chose-date").style = "display:block";
+        selectedTimeFrame(time);
+        customTime = true;
     }
 }
 
