@@ -18,10 +18,10 @@
         <nav class="desktop-nav">
             <a href=""><img class="logo-img" src="hydrovertic_logo.png" alt="hydrovertic"></a>
             <div class="desk-menu-config">
-                <a href=""><img src="moon.svg" alt=""></a>
-                <a href=""><img src="globe.svg" alt=""><strong class="pos-da-top">DA</strong></a>
+                <img src="moon.svg" alt="null" id="theme-button">
+                <a href=""><img src="globe.svg" alt="null"><strong class="pos-da-top">DA</strong></a>
                 <div class="account-container">
-                    <div class="user-icon"><a href=""><img src="user.svg" alt=""></div>
+                    <div class="user-icon"><a href=""><img src="user.svg" alt="null"></div>
                     <div class="user-name"><span><strong>John Doe</strong></span></div>
                     <div class="user-rank"><span>Admin</span></a></div>
                 </div>
@@ -140,7 +140,7 @@
             <form id="chose-date" action="">
                 <div class="date-container">
                     <div>
-                    <h3>start dato</h3>
+                    <h3>Startdato</h3>
                         <div class="input-start-date">
                             <input id="startDay" type="text" placeholder="30">
                             <input id="startMonth" type="text" placeholder="12">
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                     <div>
-                        <h3>slut dato</h3>
+                        <h3>Slutdato</h3>
                         <div class="input-end-date">
                             <input id="endDay" type="text" placeholder="31">
                             <input id="endMonth" type="text" placeholder="12">
@@ -160,11 +160,9 @@
         </section>
         <section class="container" id="chart-container">
             <div>
-                <h3>Text</h3>
+                <h3>Graf</h3>
                 <div class="chart-box">
-                    <div id="idk">
-                        <canvas id="chart"></canvas>
-                    </div>
+                    <canvas id="chart"></canvas>
                     <div class="chart-overlay"></div>
                 </div>
             </div>
@@ -176,9 +174,9 @@
                 </div>
             </div>
             <div class="container" id="chart-button-container">
-                <button class="button" id="bar-chart-button">Text</button>
-                <button class="active button" id="line-chart-button">Text</button>
-                <button class="button" id="area-chart-button">Text</button>
+                <button class="button" id="bar-chart-button">Søjle</button>
+                <button class="active button" id="line-chart-button">Linje</button>
+                <button class="button" id="area-chart-button">Område</button>
             </div>
         </section>
     </main>
