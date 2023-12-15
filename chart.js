@@ -6,7 +6,7 @@ let timeFrame = new Array;
 function selectedTimeFrame() {
     timeFrame.length = 0;
     for (let i = 0; i < dataSet.length; i++) {
-        if (i < time) {
+        if (i >= dataSet.length - time) {
             timeFrame.push(dataSet[i]);
         }
     }
